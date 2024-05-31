@@ -35,3 +35,45 @@ For each user, the following data should be stored:
 ## Data Population
 
 - For your testing, you should write a script or other facility that will populate your database with a decent amount of random, sample data.
+
+
+## Steps to Run the Project
+
+1. **Extract the Project**: Extract the zip file containing the project to a suitable location on your system.
+2. **Install Dependencies**: This project requires Python and Django. If not already installed, you can download Python from [here](https://www.python.org/downloads/) and install Django using pip:
+    ```
+    pip install Django
+    ```
+    If the project uses other dependencies, they will be listed in a requirements.txt file. You can install these using pip:
+    ```
+    pip install -r requirements.txt
+    ```
+3. **Set Up the Database**: This project uses SQLite as its database. Django comes with a built-in database migration system that you can use to initialize the database:
+    ```
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+4. **Create a Superuser**: If your application has an admin panel, you might want to create a superuser account to access it:
+    ```
+    python manage.py createsuperuser
+    ```
+5. **Run the Server**: You can start the Django development server using the following command:
+    ```
+    python manage.py runserver
+    ```
+6. **Populate the Database**: You can populate the database using the following command:
+    ```
+    python manage.py populate_db
+    ```
+
+## URLs for Testing Features
+
+- **Register**: This feature allows a new user to register. The URL for this feature is `/register/`.
+- **Login**: This feature allows a user to log in. The URL for this feature is `/login/`.
+- **Create Contact**: This feature allows a user to create a new contact. The URL for this feature is `/contacts/create`.
+- **User Contacts**: This feature allows a user to view all their contacts. The URL for this feature is `/contacts/`.
+- **Mark Contact as Spam**: This feature allows a user to mark a specific contact as spam. The URL for this feature is `/contact/<int:contact_id>/spam/`, where `<int:contact_id>` should be replaced with the ID of the contact.
+- **Get Spam Numbers**: This feature allows a user to view all spam numbers. The URL for this feature is `/spam_numbers/`.
+- **Search by Name**: This feature allows a user to search for contacts by name. The URL for this feature is `/search/name/`.
+- **Search by Phone Number**: This feature allows a user to search for contacts by phone number. The URL for this feature is `/search/phone/`.
+- **Contact Details**: This feature allows a user to view the details of a specific contact. The URL for this feature is `/contact/<int:contact_id>/`, where `<int:contact_id>` should be replaced with the ID of the contact.
